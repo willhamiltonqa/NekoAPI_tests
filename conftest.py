@@ -1,0 +1,9 @@
+# File serves as a centralized repository for shared fixtures, hooks, and configuration settings.
+import pytest
+import requests
+
+@pytest.fixture
+def get_list_images():
+    response = requests.get(url="https://api.nekosapi.com/v5/images")
+
+    return response

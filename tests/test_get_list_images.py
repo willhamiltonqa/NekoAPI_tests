@@ -5,8 +5,7 @@
 
 import requests
 
-def test_get_list_images_status_code_success():
-    result = requests.get(url="https://api.nekosapi.com/v5/images")
+def test_get_list_images_status_code_success(get_list_images):
+    result = get_list_images
 
-    print()
     assert result.status_code == 200
