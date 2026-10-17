@@ -3,7 +3,7 @@ import pytest
 import requests
 
 @pytest.fixture
-def get_list_images():
+def get_list_images_status_code():
     response = requests.get(url="https://api.nekosapi.com/v5/images")
 
-    return response
+    return response.status_code

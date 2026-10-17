@@ -3,9 +3,6 @@
 # Returns a paginated list of images, filtered by the given parameters.
 # The results are ordered by creation date, with the most recent images first.
 
-import requests
+def test_get_list_images_status_code_success(get_list_images_status_code):
+    assert get_list_images_status_code == 200
 
-def test_get_list_images_status_code_success(get_list_images):
-    result = get_list_images
-
-    assert result.status_code == 200
