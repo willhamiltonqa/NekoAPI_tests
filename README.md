@@ -31,10 +31,10 @@ Main topics which are covered in this project:
 ### Installation
 
 ```bash
-git clone https://github.com/MasonTwoK/waifu_api_test.git
+git clone https://github.com/willhamiltonqa/NekoAPI_tests.git
 cd NekoAPI_tests
-python -m venv env
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv .venv
+source .venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
