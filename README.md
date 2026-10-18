@@ -33,7 +33,7 @@ Main topics which are covered in this project:
 ```bash
 git clone https://github.com/willhamiltonqa/NekoAPI_tests.git
 cd NekoAPI_tests
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
