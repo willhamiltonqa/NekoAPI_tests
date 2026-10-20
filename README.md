@@ -21,6 +21,8 @@ Main topics which are covered in this project:
 
 `requirements.txt` - contains names of libraries which is needed to be imported
 
+`Dockerfile` - contains instructions for building the test container
+
 
 ## ▶️Getting Started
 ### Prerequisites
