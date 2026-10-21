@@ -16,7 +16,7 @@ def test_get_list_tags_response_body_key_items_presence(get_list_tags_response_b
 
 def test_get_list_tags_response_body_key_items_default_limit(get_list_tags_response_body):
     assert len(
-        get_list_tags_response_body['items']) == 26, "Response body key 'items' should return 25 items by default"
+        get_list_tags_response_body['items']) == 25, "Response body key 'items' should return 25 items by default"
 
 def test_get_list_tags_response_body_key_total_presence(get_list_tags_response_body):
     assert 'total' in get_list_tags_response_body, "Response body key 'total' is missing"
