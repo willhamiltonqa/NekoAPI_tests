@@ -2,13 +2,17 @@
 # List Images:
 # Returns a paginated list of images, filtered by the given parameters.
 # The results are ordered by creation date, with the most recent images first.
+import pytest
 
+@pytest.mark.smoke
 def test_get_list_images_status_code_success(get_list_images_status_code):
     assert get_list_images_status_code == 200
 
+@pytest.mark.smoke
 def test_get_list_images_response_body_is_not_none(get_list_images_response_body):
     assert get_list_images_response_body is not None, "Response body is None"
 
+@pytest.mark.smoke
 def test_get_list_images_response_body_length(get_list_images_response_body):
     assert len(get_list_images_response_body) == 2, "Response body should contain 2 keys"
 
