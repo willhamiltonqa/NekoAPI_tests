@@ -27,3 +27,30 @@ def get_list_tags_response_body():
     data = response.json()
 
     return data
+
+# TODO: Is it possible to make it dynamic?
+@pytest.fixture
+def get_list_tags_response_body_query_limit_1():
+    response = requests.get(url="https://api.nekosapi.com/v5/tags?limit=1")
+    data = response.json()
+
+    return data
+
+@pytest.fixture
+def get_list_tags_response_body_query_limit_0():
+    response = requests.get(url="https://api.nekosapi.com/v5/tags?limit=0")
+    data = response.json()
+
+    return data
+
+@pytest.fixture
+def get_list_tags_status_code_query_limit_minus_1():
+    response = requests.get(url="https://api.nekosapi.com/v5/tags?limit=-1")
+    return response.status_code
+
+@pytest.fixture
+def get_list_tags_response_body_query_limit_minus_1():
+    response = requests.get(url="https://api.nekosapi.com/v5/tags?limit=-1")
+    error_message = response.json()['detail'][0]['msg']
+
+    return error_message

@@ -30,3 +30,22 @@ def test_get_list_tags_response_body_key_total_presence(get_list_tags_response_b
 
 def test_get_list_tags_response_body_key_total_value(get_list_tags_response_body):
     assert get_list_tags_response_body['total'] == 55, "Response body key 'total' should return amount of 55 tags"
+
+def test_get_list_tags_response_body_query_limit_set_1(get_list_tags_response_body_query_limit_1):
+    assert len(get_list_tags_response_body_query_limit_1['items']) == 1, \
+        "Response body key 'items' should be limited to 1"
+
+def test_get_list_tags_response_body_query_limit_set_0(get_list_tags_response_body_query_limit_0):
+    assert len(get_list_tags_response_body_query_limit_0['items']) == 0, \
+        "Response body key 'items' should be limited to 0"
+
+
+@pytest.mark.skip(reason="BUG #1: Server error 500 is returned when limit is set to -1.")
+def test_get_list_tags_status_code_query_limit_set_minus_1(get_list_tags_status_code_query_limit_minus_1):
+    assert get_list_tags_status_code_query_limit_minus_1 == 422, \
+        "Response body key 'items' limited to -1 should return an error message"
+
+@pytest.mark.skip(reason="BUG #1: Server error 500 is returned when limit is set to -1.")
+def test_get_list_tags_response_body_query_limit_set_minus_1(get_list_tags_response_body_query_limit_minus_1):
+    assert 'Input should be a valid integer' in get_list_tags_response_body_query_limit_minus_1, \
+        "Response body key 'items' limited to -1 should return an error message"
