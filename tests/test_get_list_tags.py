@@ -2,7 +2,7 @@
 # List Tags:
 # Returns a paginated list of tags, ordered by name.
 import pytest
-
+import requests
 
 @pytest.mark.smoke
 def test_get_list_tags_status_code_success(get_list_tags_status_code):
@@ -39,6 +39,17 @@ def test_get_list_tags_response_body_query_limit_set_0(get_list_tags_response_bo
     assert len(get_list_tags_response_body_query_limit_0['items']) == 0, \
         "Response body key 'items' should be limited to 0"
 
+@pytest.mark.skip(reason="TBD: Find a way how to place 100 tags")
+def test_get_list_tags_response_body_query_limit_set_100(get_list_tags_response_body_query_limit_0):
+    assert len(get_list_tags_response_body_query_limit_0['items']) == 100, \
+        "Response body key 'items' should be limited to 100"
+
+def test_get_list_tags_status_code_query_limit_set_101(get_list_tags_status_code_query_limit_101):
+    assert get_list_tags_status_code_query_limit_101 == 422
+
+def test_get_list_tags_response_body_query_limit_set_101(get_list_tags_response_body_query_limit_101):
+    assert get_list_tags_response_body_query_limit_101 == 'Input should be less than or equal to 100', \
+        "Response body key 'items' limitation over 100 should return propper error message"
 
 @pytest.mark.skip(reason="BUG #1: Server error 500 is returned when limit is set to -1.")
 def test_get_list_tags_status_code_query_limit_set_minus_1(get_list_tags_status_code_query_limit_minus_1):
