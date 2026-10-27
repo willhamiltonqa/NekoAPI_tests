@@ -17,6 +17,8 @@ Main topics which are covered in this project:
 ## Project Structure
 `tests/` - folder that contains all tests of the project in which assertions apply
 
+`data.py` - contains content for expected response outputs
+
 `conftest.py` - contains methods & arrangements required for API request
 
 `requirements.txt` - contains names of libraries which is needed to be imported
