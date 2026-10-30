@@ -1,6 +1,7 @@
 # https://api.nekosapi.com/v5/docs#tag/Images/operation/list_tags_tags_get
 # List Tags:
 # Returns a paginated list of tags, ordered by name.
+
 import pytest
 
 
@@ -36,6 +37,7 @@ class TestGetListTagsNoQuery:
     def test_get_list_tags_response_body_key_total_value(self, get_list_tags_response_body):
         assert get_list_tags_response_body['total'] == 55, "Response body key 'total' should return amount of 55 tags"
 
+
 class TestGetListTagsQueryLimit:
     def test_get_list_tags_response_body_query_limit_set_1(self, get_list_tags_response_body_query_limit_1):
         assert len(get_list_tags_response_body_query_limit_1['items']) == 1, \
@@ -66,6 +68,7 @@ class TestGetListTagsQueryLimit:
     def test_get_list_tags_response_body_query_limit_set_minus_1(self, get_list_tags_response_body_query_limit_minus_1):
         assert 'Input should be a valid integer' in get_list_tags_response_body_query_limit_minus_1, \
             "Response body key 'items' limited to -1 should return an error message"
+
 
 class TestGetListTagsResponseBodyItemsContent:
     def test_get_list_tags_response_body_amount_of_tags(self, get_list_tags_response_body_items_all_tags):
