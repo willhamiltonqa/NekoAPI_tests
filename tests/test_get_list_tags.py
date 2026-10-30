@@ -68,6 +68,7 @@ class TestGetListTagsQueryLimit:
             "Response body key 'items' limited to -1 should return an error message"
 
 class TestGetListTagsResponseBodyItemsContent:
-    def test_get_list_tags_response_body_full_items_content(self):
-        pass
-
+    def test_get_list_tags_response_body_amount_of_tags(self, get_list_tags_response_body_items_all_tags):
+        real_amount_of_tags = len(get_list_tags_response_body_items_all_tags['items'])
+        assert real_amount_of_tags == get_list_tags_response_body_items_all_tags['total'], \
+            "Real amount of tags should should correspond to total amount value"

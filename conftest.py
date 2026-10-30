@@ -66,3 +66,11 @@ def get_list_tags_response_body_query_limit_minus_1():
     error_message = response.json()['detail'][0]['msg']
 
     return error_message
+
+
+@pytest.fixture
+def get_list_tags_response_body_items_all_tags():
+    response = requests.get(url="https://api.nekosapi.com/v5/tags?limit=56")
+    data = response.json()
+
+    return data
