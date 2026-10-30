@@ -30,6 +30,9 @@ class TestGetListTagsNoQuery:
     def test_get_list_tags_response_body_key_total_presence(self, get_list_tags_response_body):
         assert 'total' in get_list_tags_response_body, "Response body key 'total' is missing"
 
+    def test_get_list_tags_response_body_key_total_type(self, get_list_tags_response_body):
+        assert type(get_list_tags_response_body['total']) is int, "Response body key 'total' should be integer"
+
     def test_get_list_tags_response_body_key_total_value(self, get_list_tags_response_body):
         assert get_list_tags_response_body['total'] == 55, "Response body key 'total' should return amount of 55 tags"
 
