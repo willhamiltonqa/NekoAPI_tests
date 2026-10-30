@@ -20,6 +20,9 @@ class TestGetListTagsNoQuery:
     def test_get_list_tags_response_body_key_items_presence(self, get_list_tags_response_body):
         assert 'items' in get_list_tags_response_body, "Response body key 'items' is missing"
 
+    def test_get_list_tags_response_body_key_items_type(self, get_list_tags_response_body):
+        assert type(get_list_tags_response_body['items']) is list, "Is not list of items on page."
+
     def test_get_list_tags_response_body_key_items_default_limit(self, get_list_tags_response_body):
         assert len(get_list_tags_response_body['items']) == 25, \
             "Response body key 'items' should return 25 items by default"
@@ -60,3 +63,8 @@ class TestGetListTagsQueryLimit:
     def test_get_list_tags_response_body_query_limit_set_minus_1(self, get_list_tags_response_body_query_limit_minus_1):
         assert 'Input should be a valid integer' in get_list_tags_response_body_query_limit_minus_1, \
             "Response body key 'items' limited to -1 should return an error message"
+
+class TestGetListTagsResponseBodyItemsContent:
+    def test_get_list_tags_response_body_full_items_content(self):
+        pass
+
