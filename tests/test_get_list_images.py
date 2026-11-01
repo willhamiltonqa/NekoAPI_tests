@@ -3,6 +3,8 @@
 # Returns a paginated list of images, filtered by the given parameters.
 # The results are ordered by creation date, with the most recent images first.
 import pytest
+from utils import find_tag_in_response_body
+from data import tags_not_nsfw
 
 
 @pytest.mark.smoke
@@ -34,3 +36,9 @@ def test_get_list_images_response_body_value_items_type(get_list_images_response
 
 def test_get_list_images_response_body_value_total_type(get_list_images_response_body):
     assert isinstance(get_list_images_response_body['total'], int), "'total' should be of type int"
+
+
+@pytest.mark.parametrize("tag", tags_not_nsfw)
+def test_get_list_images_response_body_values_not_nsfw_tags(get_list_tags_response_body_items_all_tags, tag):
+    assert find_tag_in_response_body(tag, get_list_tags_response_body_items_all_tags['items']), \
+        f"{tag} tag is not present in list of returned items"
