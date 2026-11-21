@@ -34,3 +34,4 @@ def test_get_list_images_response_body_value_items_type(get_list_images_response
 
 def test_get_list_images_response_body_value_total_type(get_list_images_response_body):
     assert isinstance(get_list_images_response_body['total'], int), "'total' should be of type int"
+
