@@ -1,6 +1,9 @@
 tags_not_nsfw = [
-    'Baggy Clothes', 'Beach', 'Black hair', 'Blonde hair', 'Blue Hair', 'Boy', 'Brown Hair', 'Bunny girl', 'Catgirl',
-    'Dress', 'Flowers', 'Girl', 'Glasses', 'Gloves', 'Guitar', 'Horsegirl', 'Ice Cream', 'Illustration'
+    'Baggy Clothes', 'Beach', 'Black hair', 'Blonde hair', 'Blue Hair', 'Boy', 'Brown Hair', 'Bunny girl',
+    'Catgirl', 'Dress', 'Flowers', 'Girl', 'Glasses', 'Gloves', 'Guitar', 'Horsegirl', 'Ice Cream', 'Illustration',
+    'Kemonomimi', 'Maid', 'Mountain', 'Night', 'Pink hair', 'Plants', 'Purple hair', 'Rain', 'Reading', 'Red hair',
+    'School Uniform', 'Shorts', 'Skirt', 'Sportswear', 'Sunny', 'Sword', 'Tree', 'Usagimimi', 'Weapon', 'Wet',
+    'White hair', 'Yuri'
 ]
 
 ids_is_nsfw = [
