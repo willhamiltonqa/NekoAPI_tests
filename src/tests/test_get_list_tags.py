@@ -3,7 +3,7 @@
 # Returns a paginated list of tags, ordered by name.
 
 import pytest
-from src.utils import find_tag_in_response_body, get_each_tag_name_from_response_body
+from src.utils import find_tag_in_response_body
 from src.data import tags_not_nsfw
 
 
