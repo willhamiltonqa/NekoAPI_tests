@@ -3,6 +3,8 @@
 # Returns a paginated list of tags, ordered by name.
 
 import pytest
+from src.utils import find_tag_in_response_body, get_each_tag_name_from_response_body
+from src.data import tags_not_nsfw
 
 
 class TestGetListTagsNoQuery:
@@ -75,3 +77,9 @@ class TestGetListTagsResponseBodyItemsContent:
         real_amount_of_tags = len(get_list_tags_response_body_items_all_tags['items'])
         assert real_amount_of_tags == get_list_tags_response_body_items_all_tags['total'], \
             "Real amount of tags should should correspond to total amount value"
+
+
+@pytest.mark.parametrize("tag", tags_not_nsfw)
+def test_get_list_images_response_body_values_not_nsfw_tags(get_list_tags_response_body_items_all_tags, tag):
+    assert find_tag_in_response_body(tag, get_list_tags_response_body_items_all_tags['items']), \
+        f"{tag} tag is not present in list of returned items"
